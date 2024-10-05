@@ -1,4 +1,4 @@
-const apiKey = "60c5d32af585c2cba7159e8b6f3205a6"
+import {Weather_Api_Key} from "./private"
 
 document.getElementById('getWeather').addEventListener('click', function() {
     const city = document.getElementById('city').value;
@@ -8,7 +8,7 @@ document.getElementById('getWeather').addEventListener('click', function() {
         return;
     }
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${Weather_Api_Key}&units=metric`)
         .then(response => response.json())
         .then(data => {
             const weatherDescription = data.weather[0].description;
